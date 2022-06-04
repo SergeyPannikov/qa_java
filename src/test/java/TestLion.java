@@ -3,30 +3,13 @@ import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
-@RunWith(Parameterized.class)
+@RunWith(MockitoJUnitRunner.class)
 public class TestLion {
-
-    private final String sex;
-    private final boolean expected;
-
-    public TestLion(String sex, boolean expected) {
-        this.sex = sex;
-        this.expected = expected;
-    }
-
-    @Parameterized.Parameters // добавили аннотацию
-    public static Object[][] getSumData() {
-        return new Object[][] {
-                {"Самец",true},
-                {"Самка",false},
-                {"Нечто",false},
-        };
-    }
 
     Lion lion = Mockito.mock(Lion.class);
 
@@ -38,8 +21,8 @@ public class TestLion {
 
     @Test
     public void testDoesHaveManeMethod(){
-        Mockito.when(lion.doesHaveMane()).thenReturn(false);
-        Assert.assertEquals(false,lion.doesHaveMane());
+        Mockito.when(lion.doesHaveMane()).thenReturn(true);
+        Assert.assertEquals(true,lion.doesHaveMane());
     }
 
     @Test
@@ -48,13 +31,5 @@ public class TestLion {
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"),lion.getFood());
     }
 
-    @Test
-    public void testLionConstructor() throws Exception {
-        try {
-            Lion lion = new Lion(sex);
-            Assert.assertEquals(expected,lion.doesHaveMane());
-        } catch (Exception exception){
-            System.out.println(exception);
-        }
-    }
+
 }
