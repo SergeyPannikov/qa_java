@@ -8,9 +8,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
-/*
-Тут все можно проверить если вот сделать  private Cat cat = new Cat(new Feline()); - но насколько это правильно и можно ли так делать для этого задания ?
-*/
 @RunWith(MockitoJUnitRunner.class)
 public class TestCat {
 
