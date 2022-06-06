@@ -15,9 +15,6 @@ public class TestLion {
     @Mock
     Lion lion;
 
-    public TestLion() throws Exception {
-    }
-
     @Test
     public void testGetKittensMethod() throws Exception {
         Mockito.when(lion.getKittens()).thenReturn(1);
