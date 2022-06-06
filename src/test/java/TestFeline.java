@@ -8,7 +8,6 @@ public class TestFeline {
 
     @Test
     public void testGetFamilyMethod(){
-
         Assert.assertEquals("Кошачьи",feline.getFamily());
     }
 

@@ -16,12 +16,11 @@ public class TestLionParameterized {
         this.expectedMane = expected;
     }
 
-    @Parameterized.Parameters // добавили аннотацию
+    @Parameterized.Parameters
     public static Object[][] getSumData() {
         return new Object[][] {
                 {"Самец",true},
                 {"Самка",false},
-                {"Нечто",false},
         };
     }
 
