@@ -26,4 +26,9 @@ public class TestLion {
         Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"),lion.getFood());
     }
+
+    @Test
+    public void testLionSexException() {
+        Assert.assertThrows(Exception.class,() ->new Lion("Нечто",new Feline()));
+    }
 }
